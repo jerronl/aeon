@@ -1,6 +1,3 @@
-#!/usr/bin/env python3 -u
-# -*- coding: utf-8 -*-
-# copyright: aeon developers, BSD-3-Clause License (see LICENSE file)
 """Hierarchical Data Generators."""
 
 __author__ = ["ltsaprounis", "ciaran-g"]
@@ -27,7 +24,7 @@ def _make_hierarchical(
     random_state: Union[int, np.random.RandomState] = None,
     add_nan: bool = False,
 ) -> pd.DataFrame:
-    """Generate hierarchical multiindex mtype for testing.
+    """Generate hierarchical multiindex type for testing.
 
     Parameters
     ----------
@@ -55,7 +52,7 @@ def _make_hierarchical(
     Returns
     -------
     pd.DataFrame
-        hierarchical mtype dataframe
+        hierarchical dataframe
     """
     levels = [
         [f"h{i}_{j}" for j in range(hierarchy_levels[i])]
@@ -170,7 +167,6 @@ def _bottom_hier_datagen(
                 node_lookup[name] = node_lookup.groupby([name_groupby])[
                     "l1_agg"
                 ].transform(
-                    # TODO: the lambda function below should use `x`` but doesn't
                     lambda x: "l"
                     + str(i)  # noqa: B023
                     + "_node"

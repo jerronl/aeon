@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Multiple Representations Sequence Miner (MrSQM) Classifier."""
 
 __author__ = ["MatthewMiddlehurst"]
@@ -95,7 +94,7 @@ class MrSQMClassifier(BaseClassifier):
         super(MrSQMClassifier, self).__init__()
 
     _tags = {
-        "X_inner_mtype": "nested_univ",  # we don't like this, but it's the only input!
+        "X_inner_type": "nested_univ",  # we don't like this, but it's the only input!
         "algorithm_type": "shapelet",
         "cant-pickle": True,
         "python_dependencies": "mrsqm",
